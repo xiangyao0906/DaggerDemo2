@@ -1,11 +1,6 @@
 package com.lettle.xiangyao.daggerdemo2.conpont;
 
-import android.app.Application;
-
-import com.lettle.xiangyao.daggerdemo2.annotation.ActivityScope;
-import com.lettle.xiangyao.daggerdemo2.api.Api;
 import com.lettle.xiangyao.daggerdemo2.api.ApiModule;
-import com.lettle.xiangyao.daggerdemo2.application.DemoApplication;
 import com.lettle.xiangyao.daggerdemo2.model.MainModel;
 import com.lettle.xiangyao.daggerdemo2.module.ApplictionModule;
 
@@ -16,6 +11,11 @@ import dagger.Component;
 /**
  * @author xiangyao
  * @date 2017/11/11
+ * <p>
+ * app级的Compont(主)
+ * <p>
+ * 依赖一些全局的对象
+ * 网络访问框架/Application/SharePrefence 等等
  */
 
 
@@ -23,21 +23,15 @@ import dagger.Component;
 @Component(modules = {ApiModule.class, ApplictionModule.class})
 public interface AppConpont {
 
-    MainConpont addSub(MainModel mainConpont);
-
-
     /**
-     * 获取appliction
+     * 可以通过添加子Compont 的方式
+     * 使其可以使用主Compont的依赖关系
+     *
+     * @link
+     *
      */
-    DemoApplication getDemoApplication();
 
-    /**
-     *
-     *
-     * */
-    Api getApi();
-
-
+    MainConpont addSub(MainModel mainConpont);
 
 
 }

@@ -7,7 +7,8 @@ import retrofit2.http.Query;
 import rx.Observable;
 
 /**
- * Created by xiangyao on 2017/11/11.
+ * @author xiangyao
+ * @date 2017/11/11
  */
 
 public interface Api {
@@ -15,6 +16,10 @@ public interface Api {
 
     /**
      * 获取电影
+     *
+     * @param count
+     * @param star
+     * @return Observable
      */
     @GET("v2/movie/top250?")
     Observable<Movie> getMovie(@Query("start") String star, @Query("count") String count);

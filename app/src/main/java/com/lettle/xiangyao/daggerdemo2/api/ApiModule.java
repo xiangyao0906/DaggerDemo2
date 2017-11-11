@@ -23,7 +23,7 @@ public class ApiModule {
 
     @Singleton
     @Provides
-    public Api getApi() {
+    Api getApi() {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .client(new OkHttpClient())

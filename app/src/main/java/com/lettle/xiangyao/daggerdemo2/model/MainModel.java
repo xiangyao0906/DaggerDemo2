@@ -7,7 +7,6 @@ import dagger.Module;
 import dagger.Provides;
 
 /**
- *
  * @author xiangyao
  * @date 2017/11/11
  */
@@ -22,7 +21,7 @@ public class MainModel {
 
     @ActivityScope
     @Provides
-    public MainContract.View providerView() {
+    MainContract.View providerView() {
         return view;
     }
 
